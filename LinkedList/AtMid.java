@@ -35,7 +35,7 @@ class List{
                 		newnode = new Node();
                 		newnode.data = x;
                 		newnode.next = temp.next;
-               		temp.next = newnode;
+               		 temp.next = newnode;
                 		count++;
                 		System.out.println("Total number of nodes: " +count);
             }
@@ -65,11 +65,6 @@ class List{
             }
         }
     }
-
-	
-		
-
-
 	public void show(){
 		if(head == null){
 			System.out.println("Linked list is empty!");
