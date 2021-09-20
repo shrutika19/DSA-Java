@@ -1,18 +1,18 @@
-import java.util.Scanner;
+import java.util.Scanner; 
 
 class Node{
 	int data;
 	Node next;
 }
 
-class CircularList{
-	Node newnode, temp;
-	Node head = null;
+class CircularList1{
+	Node newnode, temp, prenode;
+	Node head =null;
 
 	public void add(int x){
 		newnode = new Node();
-		newnode.data = x;
-
+		newnode.data =x;
+		
 		if(head == null){
 			head = newnode;
 			newnode.next = head;
@@ -23,18 +23,15 @@ class CircularList{
 				temp = temp.next;
 			}
 
-			newnode.next = head;
 			temp.next = newnode;
-			head = newnode;
+			newnode.next = head;
 		}
-
-		System.out.println("Node is inserted!");
-
-	}
+	
+		System.out.println("Node is inserted!");	
+ 	}
 
 	public void remove(){
 		temp = head;
-	
 		if(head == null){
 			System.out.println("Linked list is empty!\n");
 		}else if(temp.next == head){
@@ -42,15 +39,15 @@ class CircularList{
 			System.out.println("Node is deleted!\n");
 		}else{
 			while(temp.next != head){
+				prenode = temp;
 				temp = temp.next;
 			}
 
-			temp.next = head.next;
-			head = temp.next;
+			prenode.next = temp.next;
 			System.out.println("Node is deleted!\n");
 		}
 	}
-
+	
 	public void show(){
 		temp = head;
 
@@ -62,38 +59,38 @@ class CircularList{
 				temp = temp.next;
 			}
 		     	System.out.println("Element is :" +temp.data);
-		}	
-	}	
-}
-
-public class AtBeg{
-	public static void main(String args[]){
-	
-	Scanner scan = new Scanner(System.in);
-	CircularList list = new CircularList();
-
-	int ch, data;
-
-	do{
-		System.out.println("\n 1.Insertion at beginning\n 2.Deletion at beginning\n 3.Show\n 4.Exit\n");
-		System.out.println("Enter your choice:");
-		ch = scan.nextInt();
-
-		switch(ch){
-			case 1:
-				System.out.println("Enter data to insert:");
-				data = scan.nextInt();
-				list.add(data);
-				break;
-
-			case 2:
-				list.remove();
-				break;
-
-			case 3:
-				list.show();
-				break;
 		}
-	}while(ch != 4);
+	}
 }
+
+public class AtEnd{
+	public static void main(String args[]){
+		Scanner scan = new Scanner(System.in);
+		CircularList1 list = new CircularList1();
+
+		int ch, data;
+
+		do{
+			System.out.println("\n 1.Insert at end\n 2.Delete at end\n 3.Show\n 4.Exit");
+			System.out.print("\n Enter your choice:\n");
+			ch = scan.nextInt();
+
+			switch(ch){
+				case 1:
+					System.out.println("Enter data to insert:\n");
+					data = scan.nextInt();
+					list.add(data);
+					break;
+
+				case 2:
+					list.remove();
+					break;
+
+				case 3:
+					list.show();
+					break;
+			}
+		}while(ch != 4);
+	
+	}
 }
