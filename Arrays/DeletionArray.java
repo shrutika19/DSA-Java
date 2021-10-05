@@ -1,3 +1,5 @@
+#java program to delete specific element from array
+
 import java.util.Scanner;
 
 public class DeletionArray{
