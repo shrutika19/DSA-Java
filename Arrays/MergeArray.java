@@ -1,4 +1,4 @@
-//java prgram to merge two array to form new third array
+//java program to merge two array to form new third array
 
 import java.util.Scanner;
 

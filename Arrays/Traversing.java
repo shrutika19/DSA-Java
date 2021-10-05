@@ -1,3 +1,5 @@
+//java program to traverse the array elements
+
 import java.util.Scanner;
 
 public class Traversing{
