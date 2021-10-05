@@ -1,3 +1,5 @@
+//java program to insert an element at specific position in array
+
 import java.util.Scanner;
 
 class DisplayData{

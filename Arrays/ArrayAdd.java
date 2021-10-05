@@ -1,3 +1,5 @@
+//java program for addition of array elements
+
 import java.util.Scanner;
 
 public class ArrayAdd{
